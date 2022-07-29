@@ -1,0 +1,33 @@
+﻿.navbar {
+    background-color: $book-color;
+    position: fixed !important;
+    width: 100vw;
+    top: 0;
+    z-index: 999;
+
+    .ne-brand {
+        color: $prime-color;
+
+        img {
+            width: 70px;
+        }
+    }
+
+    .nav-link{
+        color: #fff;
+        transition: $transition-ease;
+
+        &:hover{
+            color: $prime-color;
+        }
+    }
+}
+
+
+.navbar-toggler{
+   border-color: #fff;
+
+   .fa-bars{
+    color: $prime-color !important;
+   }
+  }

@@ -1,0 +1,6 @@
+﻿venv
+*.pyc
+staticfiles
+.env
+.first_dj_env
+db.sqlite3

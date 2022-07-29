@@ -1,0 +1,90 @@
+﻿{% extends 'main.html' %}
+{% load static %}
+
+
+{% block heroview %}
+
+<div class="col-lg-12 col-xl-12 col-xxl-12">
+    <div class="my-5 text-center text-xl-start">
+        <h1 class="display-5 fw-bolder hero-title mb-3 text-center">
+            Choisissez votre version !
+        </h1>
+    </div>
+</div>
+
+{% endblock heroview %}
+
+
+{% block content %}
+<section class="versions" id="versions">
+    <div class="container">
+        <div class="versions-btn">
+            <div class="btn-version-block">
+            
+           
+                {% for ver in versions  %}
+                    <a href=" {% url 'store_version_livre' ver.slug %} " class="btn btn-version btn-ne flex-shrink-0">
+                        {{ver.version}}
+                    </a>
+                {% empty %}
+                    <p class="store-version-status">
+                        Veuillez revenir dans le store du livre plus tard !
+                    </p> 
+                {% endfor %}
+            
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="order-area mb-5">
+    <div class="container px-4 px-lg-5">
+        {% if version %}
+
+            {% for livre in livres  %}
+                <div class="row gx-4 gx-lg-5 align-items-center">
+                    <div class="col-md-6 version-img">
+                        <img class="card-img-top img-fluid" src=" {{livre.imageURL}} " alt="Format du livre"/>
+                    </div>
+                    <div class="col-md-6">
+                        <h1 class="display-5 fw-bolder book-title">
+                            {{livre.name}}
+                        </h1>
+                        <div class="fs-5 mb-5">
+                            <span class="coin">
+                                {{livre.price|floatformat:0}}
+                                <span class="coins">
+                                    F CFA
+                                </span>
+                            </span>
+                        </div>
+                        <p class="lead">
+                            {{livre.description}}
+                        </p>
+                        <div class="d-flex">
+                            <button data-product="{{livre.id}}" data-action="add" class="update-cart btn btn-ne flex-shrink-0" type="button">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <p class="store-version-status text-center">
+                   Aucun livre n'est disponible pour le moment. Veuillez revenir dans le store plus tard !
+                </p> 
+            {% endfor %}
+
+        {% else %}
+            <!-- Preview image figure-->
+            <figure class="mb-4 rounded figure-img">
+                <img class="img-fluid rounded" src="{% static 'assets/imgs-blog/post-detail-bg.jpg' %}" alt="Le livre de la ComptaMat NEx ouvert" />
+            </figure>
+            
+        {% endif %}
+            
+    </div>
+</section>
+
+
+{% endblock content %}

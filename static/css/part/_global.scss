@@ -1,0 +1,64 @@
+﻿a{
+    text-decoration: none;
+    color: $book-color;
+    transition: $transition-ease;
+
+    &:hover{
+        color: $prime-color;
+    }
+}
+
+.text-yel{
+    color: $prime-color;
+ }
+
+.text-yel-2{
+    color: $prime-color;
+
+    &:hover{
+        color: $prime-color-hover;
+    }
+ }
+
+ .btn-ne, .btn-primary{
+    background-color: $book-color;
+    color: white;
+    border: none !important;
+    cursor: pointer;
+
+    &:hover, &:focus{
+        background-color: $prime-color;
+        color: $book-color;
+        border: none !important;
+    }
+ }
+
+ .btn-cme-order{
+    background-color: white;
+    color: black;
+    border: none !important;
+
+    &:hover, &:focus{
+       background-color: $prime-color;
+       color: $book-color;
+       border: none !important;
+    }
+ }
+ 
+.capitalize{
+    text-transform: uppercase;
+}
+
+.section-title{
+    color: $book-color;
+}
+
+.bg-ne{
+    background-color: $prime-color;
+    color: $book-color;
+}
+
+
+.active{
+    color: $prime-color !important;
+}

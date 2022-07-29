@@ -1,0 +1,89 @@
+﻿{% extends 'main.html' %}
+{% load static %}
+
+
+{% block heroview %}
+
+<div class="col-lg-12 col-xl-12 col-xxl-12">
+    <div class="my-5 text-center text-xl-start">
+        <h1 class="display-5 fw-bolder hero-title mb-3 text-center">
+            Dans votre panier...
+        </h1>
+    </div>
+</div>
+
+{% endblock heroview %}
+
+{% block content %}
+<section class="versions">
+    <div class="container-fluid">
+        <div class="versions-btn">
+            <div class="btn-version-block" id="panier">
+                <div class="row w-100">
+                    <div class="col-lg-12">
+                        <div class="box-element">
+                           <div class="store-btn-slider">
+                                <a  class="btn btn-ne" href="{% url 'store_view' %}">
+                                    &#x2190; Retour au store
+                                </a>
+                                <a class="btn btn-ne" href="{% url 'validation_view' %}">
+                                    Validation
+                                </a>
+                           </div>
+                           <div class="cart-state">
+                                <h5>
+                                    Article: <strong>
+                                        {{order.get_cart_items}}
+                                    </strong>
+                                </h5>
+                                <h5>
+                                    Total&nbsp;:
+                                    <strong>
+                                        {{order.get_cart_total|floatformat:0}}<span class="coins">F CFA</span>
+                                    </strong>
+                                </h5>
+                           </div>
+                        </div>
+            
+                        <div class="box-element mt-3">
+                            <table class="table table-border table-sm">
+                                <thead class="table-head bg-ne">
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Format</th>
+                                        <th>Prix</th>
+                                        <th>Quantité</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                {% for item in items  %}
+                                <tbody class="table-body">
+                                    <tr>
+                                        <td data-label="Image" id="responsive-border">
+                                            <img class="row-image" src="{{item.product.imageURL}}">
+                                        </td>
+                                        <td data-label="Format" id="responsive-border">{{item.product.name}}</td>
+                                        <td data-label="Prix" id="responsive-border">{{item.product.price|floatformat:0}}</td>
+                                        <td data-label="Quantité" id="responsive-border">
+                                            <p class="quantity">
+                                                {{item.quantity}}
+                                            </p>
+                                            <div class="quantity">
+                                                <img data-product="{{item.product.id}}" data-action="add" class="chg-quantity update-cart" src="{% static  'assets/commande/arrow-up.png' %}">
+                                                <img data-product="{{item.product.id}}" data-action="remove" class="chg-quantity update-cart" src="{% static  'assets/commande/arrow-down.png' %}">
+                                            </div>
+                                        </td>
+                                        <td data-label="Total" id="responsive-border">{{item.get_total|floatformat:0}}<span class="coins">F CFA</span></td>
+                                    </tr>
+                                </tbody>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

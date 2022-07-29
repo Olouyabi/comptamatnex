@@ -1,0 +1,22 @@
+﻿$prime-color : #f49523;
+$prime-color-hover : #d8b285;
+// $prime-color : #fcee21;
+
+$second-color : #424040;
+$second-color : #00000027;
+
+$book-color : #034077;
+$footer-color : #010d18;
+
+$transition-ease-io : all 900ms ease-in-out;
+$transition-ease : all 0.3s ease 0s;
+
+$boxhadow : rgba(0, 0, 0, 0.233) 0px -15px 15px -15px;
+
+
+@mixin flex($dir:row, $justify:space-between) {
+    display : flex;
+	flex-direction: $dir;
+	justify-content: $justify;
+	align-items: center;
+}

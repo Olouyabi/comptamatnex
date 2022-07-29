@@ -1,0 +1,23 @@
+﻿
+
+#preloader{
+    border: 6px solid $book-color;
+    border-radius: 50%;
+    border-top-color: $prime-color;
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 32px);
+    width: 55px;
+    height: 55px;
+    z-index: 9999;
+    animation: preloader 1.2s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes preloader{
+    to {
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+}
