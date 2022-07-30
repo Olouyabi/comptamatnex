@@ -31,6 +31,8 @@ urlpatterns = [
     path('', include('compte.urls')),
     path('', include('membres.urls')),
     path('', include('commande.urls')),
+    path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
+    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
     path('admin/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
 ]
