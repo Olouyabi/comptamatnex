@@ -12143,6 +12143,13 @@ a:hover {
   width: 100vw;
   top: 0;
   z-index: 999;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.navbar .navbar-brand {
+  padding-top: 0.2rem !important;
+  padding-bottom: 0.2rem !important;
 }
 
 .navbar .ne-brand {
@@ -12165,9 +12172,12 @@ a:hover {
 
 .navbar .membre-cmenex {
   background-color: #f49523;
+  height: 100%;
 }
 
 .navbar .membre-cmenex .nav-link {
+  display: block;
+  height: 100%;
   color: #034077 !important;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -12175,7 +12185,6 @@ a:hover {
 
 .navbar .membre-cmenex .nav-link:hover {
   background-color: #fff;
-  color: #034077 !important;
 }
 
 .navbar-toggler {
