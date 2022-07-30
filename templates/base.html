@@ -100,13 +100,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         {% block navbaritem %}
-                        <li class="nav-item {% if navbar == 'hero' %} active {% endif %} "><a class="nav-link" href="{% url 'home_view' %}">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link {% if navbar == 'hero' %} active {% endif %}" href="{% url 'home_view' %}">Accueil</a></li>
                         <li class="nav-item "><a class="nav-link" href="{% url 'home_view' %}#features"><span
                                     class="text-capitalize">à</span> propos</a></li>
-                        <li class="nav-item {% if navbar == 'store' %} active {% endif %}"><a class="nav-link" href="{% url 'store_view' %}">Commander</a></li>
-                        <li class="nav-item {% if navbar == 'blog' %} active {% endif %}"><a class="nav-link" href="{% url 'post_list' %}">Blog</a></li>
-                        <li class="nav-item {% if navbar == 'contact' %} active {% endif %}"><a class="nav-link" href="{% url 'contact_view' %}">Contact</a></li>
-                        <li class="nav-item {% if navbar == 'membre' %} active {% endif %} membre-cmenex"><a class="nav-link" href="{% url 'login_view' %}">Membre ComptaMat NEx</a></li>
+                        <li class="nav-item"><a class="nav-link {% if navbar == 'store' %} active {% endif %}" href="{% url 'store_view' %}">Commander</a></li>
+                        <li class="nav-item"><a class="nav-link {% if navbar == 'blog' %} active {% endif %}" href="{% url 'post_list' %}">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link {% if navbar == 'contact' %} active {% endif %}" href="{% url 'contact_view' %}">Contact</a></li>
+                        <li class="nav-item membre-cmenex"><a class="nav-link {% if navbar == 'membre' %} active {% endif %}" href="{% url 'login_view' %}">Membre ComptaMat NEx</a></li>
                         {% endblock navbaritem %}  
                     </ul>
                 </div>

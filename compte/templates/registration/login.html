@@ -22,9 +22,9 @@
         <form class="formulaire" id="formulaire-login" data-sb-form-api-token="API_TOKEN" method="POST" action="." autocomplete="off">
             {% csrf_token %}
             <div class="form-floating mb-3">
-                <input class="form-control" id="pseudo" type="text" name="username" placeholder="Pseudo" data-sb-validations="required" autocomplete="off"/>
-                <label for="pseudo">Pseudo</label>
-                <div class="invalid-feedback" data-sb-feedback="pseudo:required">Le pseudo est requis.</div>
+                <input class="form-control" id="pseudo" type="text" name="username" placeholder="Nom d’utilisateur" data-sb-validations="required" autocomplete="off"/>
+                <label for="pseudo">Nom d’utilisateur</label>
+                <div class="invalid-feedback" data-sb-feedback="pseudo:required">Le nom d’utilisateur est requis.</div>
             </div>
             <div class="form-floating mb-3">
                 <input class="form-control" id="motDePasse" type="password" name="password" placeholder="Mot de passe" data-sb-validations="required" autocomplete="off"/>

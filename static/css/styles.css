@@ -12133,10 +12133,6 @@ a:hover {
   color: #034077;
 }
 
-.active {
-  color: #f49523 !important;
-}
-
 .navbar {
   background-color: #034077;
   position: fixed !important;
@@ -12192,6 +12188,11 @@ a:hover {
 }
 
 .navbar-toggler .fa-bars {
+  color: #f49523 !important;
+}
+
+.show > .nav-link,
+.nav-link.active {
   color: #f49523 !important;
 }
 
@@ -12436,6 +12437,12 @@ textarea {
 .form-floating:focus,
 .form-control:focus {
   border: none !important;
+}
+
+/*************sign up & paw forgtten*******/
+.not_login a {
+  font-size: 0.8em;
+  margin: 0 2rem;
 }
 
 .ne-footer {

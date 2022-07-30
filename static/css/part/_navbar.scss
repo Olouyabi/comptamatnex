@@ -55,3 +55,8 @@
     color: $prime-color !important;
    }
   }
+
+.show > .nav-link,
+.nav-link.active {
+  color: $prime-color !important;
+}
