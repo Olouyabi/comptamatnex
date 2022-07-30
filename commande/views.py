@@ -42,6 +42,7 @@ def panier(request):
         'items': items,
         'order': order,
         'cartItems': cartItems,
+        'navbar':'store',
     }
     return render(request, 'store/cart.html', context)
 
@@ -55,6 +56,7 @@ def validation(request):
         'items': items,
         'order': order,
         'cartItems': cartItems,
+        'navbar':'store',
     }
     return render(request, 'store/checkout.html', context)
 
@@ -79,8 +81,7 @@ def mouvement_article(request):
     
     if orderItem.quantity <= 0:
         orderItem.delete()
-
-    return JsonResponse('article est ajouté', safe=False)
+    # return JsonResponse('article est ajouté', safe=False)
 
 
 # from django.views.decorators.csrf import csrf_protect
@@ -112,6 +113,4 @@ def process_order(request):
             adresse=data['shipping']['adresse'],
             telephone=data['shipping']['telephone'],
         )
-
-
-    return JsonResponse('Payement effectué', safe=False)
+    # return JsonResponse('Payement effectué', safe=False)
