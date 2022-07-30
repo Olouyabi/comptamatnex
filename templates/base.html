@@ -30,7 +30,7 @@
     dans le contexte de l’inventaire initial du patrimoine
     non financier de l’état et des autres organismes publics
     au sein de l’union economique et monétaire ouest-africaine (UEMOA)">
-    <meta name="author" content="Hiliyassou Chabi">
+    <meta name="author" content="Norbert Kassa">
 
     <title>
 
@@ -104,9 +104,9 @@
                         <li class="nav-item "><a class="nav-link" href="{% url 'home_view' %}#features"><span
                                     class="text-capitalize">à</span> propos</a></li>
                         <li class="nav-item {% if navbar == 'store' %} active {% endif %}"><a class="nav-link" href="{% url 'store_view' %}">Commander</a></li>
-                        <li class="nav-item {% if navbar == 'membre' %} active {% endif %} "><a class="nav-link" href="{% url 'login_view' %}">Membre ComptaMat NEx</a></li>
-                        <li class="nav-item {% if navbar == 'blog' %} active {% endif %} "><a class="nav-link" href="{% url 'post_list' %}">Blog</a></li>
-                        <li class="nav-item {% if navbar == 'contact' %} active {% endif %} "><a class="nav-link" href="{% url 'contact_view' %}">Contact</a></li>
+                        <li class="nav-item {% if navbar == 'blog' %} active {% endif %}"><a class="nav-link" href="{% url 'post_list' %}">Blog</a></li>
+                        <li class="nav-item {% if navbar == 'contact' %} active {% endif %}"><a class="nav-link" href="{% url 'contact_view' %}">Contact</a></li>
+                        <li class="nav-item {% if navbar == 'membre' %} active {% endif %} membre-cmenex"><a class="nav-link" href="{% url 'login_view' %}">Membre ComptaMat NEx</a></li>
                         {% endblock navbaritem %}  
                     </ul>
                 </div>

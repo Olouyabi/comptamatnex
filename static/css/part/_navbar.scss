@@ -9,7 +9,7 @@
         color: $prime-color;
 
         img {
-            width: 70px;
+            width: 50px;
         }
     }
 
@@ -19,6 +19,20 @@
 
         &:hover{
             color: $prime-color;
+        }
+    }
+
+    .membre-cmenex{
+        background-color: $prime-color;
+
+        .nav-link{
+            color: $book-color !important;
+            transition: $transition-ease;
+    
+            &:hover{
+                background-color: #fff;
+                color: $book-color !important;
+            }
         }
     }
 }
