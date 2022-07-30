@@ -1,11 +1,13 @@
 ﻿{% extends 'base.html' %}
 {% load static %}
 
+{% block subtitle %} {{user.username|title}} {% endblock subtitle %}
+
 {% block navbaritem %}
-    <li class="nav-item"><a class="nav-link" href="{% url 'home_view' %}">Accueil</a></li>
-    <li class="nav-item"><a class="nav-link" href="{% url 'post_list' %}">Blog</a></li>
-    <li class="nav-item"><a class="nav-link" href="{% url 'contact_view' %}">Contact</a></li>
-    <li class="nav-item"><a class="nav-link" href=" {% url 'logout_view' %} ">Se déconnecter</a></li>
+    <li class="nav-item"><a class="nav-link {% if navbar == 'hero' %} active {% endif %}" href="{% url 'home_view' %}">Accueil</a></li>
+    <li class="nav-item"><a class="nav-link {% if navbar == 'blog' %} active {% endif %}" href="{% url 'post_list' %}">Blog</a></li>
+    <li class="nav-item"><a class="nav-link {% if navbar == 'contact' %} active {% endif %}" href="{% url 'contact_view' %}">Contact</a></li>
+    <li class="nav-item"><a class="nav-link {% if navbar == 'membre' %} active {% endif %}" href=" {% url 'logout_view' %} ">Se déconnecter</a></li>
 {% endblock navbaritem %}  
 
 {% block heroview %}

@@ -54,5 +54,6 @@ def post_detail(request, day:int, month:int, year:int, slug: str):
           'categories': categories,
           'commentaires': commentaires,  
           'new_comment': new_comment, 
-          'comment_form': comment_form
+          'comment_form': comment_form,
+          'navbar':'blog',
           })
