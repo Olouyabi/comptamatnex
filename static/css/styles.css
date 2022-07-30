@@ -12214,6 +12214,30 @@ a:hover {
   font-weight: 700;
 }
 
+blockquote {
+  font-size: 1.32rem;
+  width: 100%;
+  margin: 10px auto;
+  font-family: Open Sans;
+  font-style: italic;
+  color: #495057;
+  padding: 1.2em 30px 1.2em 75px;
+  border-left: 8px solid #343a40;
+  line-height: 1.6;
+  position: relative;
+  background-color: #e9ecef;
+}
+
+blockquote:before {
+  font-family: Arial;
+  content: "\201C";
+  color: #343a40;
+  font-size: 4em;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+}
+
 .about-ne-cme {
   padding-top: 7rem;
 }

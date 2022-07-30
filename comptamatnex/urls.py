@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
+from django.contrib.staticfiles.storage import staticfiles_storage
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
@@ -21,6 +21,7 @@ from . import views
 from comptamatnex.settings import STATIC_URL
 from . import settings
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
+from django.views.generic.base import RedirectView
 
 
 
@@ -35,6 +36,10 @@ urlpatterns = [
     path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
     path('admin/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
+    path(
+        "favicon.ico",
+        RedirectView.as_view(url=staticfiles_storage.url("favicon.ico")),
+    ),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
