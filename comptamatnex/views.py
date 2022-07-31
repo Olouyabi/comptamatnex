@@ -11,5 +11,5 @@ def home(request):
     return render(request, 'pages/index.html', context)
 
 
-def contact(request):
-    return render(request, 'pages/contact.html', {'navbar':'contact',})
+# def contact(request):
+#     return render(request, 'pages/contact.html', {'navbar':'contact',})

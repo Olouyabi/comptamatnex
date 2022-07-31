@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'commande.apps.CommandeConfig',
     'compte.apps.CompteConfig',
     'membres.apps.MembresConfig',
+    'contact.apps.ContactConfig',
 
     "phonenumber_field",
     'django_countries',

@@ -27,7 +27,8 @@ from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('', views.home, name="home_view"),
-    path('contact/', views.contact, name="contact_view"),
+    # path('contact/', views.contact, name="contact_view"),
+    path('', include('contact.urls')),
     path('', include('blog.urls')),
     path('', include('compte.urls')),
     path('', include('membres.urls')),
