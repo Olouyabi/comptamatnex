@@ -28,6 +28,7 @@ class Post(models.Model):
     titre = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
     contenu = tinymce_models.HTMLField()
+    image = models.ImageField(upload_to='blogs', default='asses/imgs-blog/blog-bg.png')
     auteur = models.ForeignKey(User, on_delete= models.CASCADE, related_name='posted')
     date_creation = models.DateTimeField(auto_now_add=True)
     date_modification = models.DateTimeField(auto_now= True)

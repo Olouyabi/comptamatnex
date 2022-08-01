@@ -22,30 +22,6 @@
   <div class="row post">
     <!-- Blog entries-->
     <div class="col-lg-8">
-      <!-- Featured blog post-->
-      <div class="card mb-4">
-        <a href="#!"
-          ><img
-            class="card-img-top"
-            src="{% static 'assets/imgs-blog/first-blog-bg.png' %}"
-            alt="..."
-        /></a>
-        <div class="card-body">
-          <!-- <div class="small text-muted">January 1, 2022</div> -->
-          <h2 class="card-title text-yel">Extrait du livre</h2>
-          <p class="card-text">
-            ...La valeur d’origine de la matière fongible recensée lors de
-            l’inventaire initial du patrimoine non financier de l’organisme
-            public équivaut alors à la valeur correspondant au format de la
-            matière fongible figurant dans le « Répertoire de la mercuriale des
-            prix adaptée au format de la matière fongible », en tant que
-            première donnée de base pour estimer sa valeur d’inventaire...
-          </p>
-          <p class="reference-cmenex text-muted">Page 100</p>
-
-          <a class="btn btn-primary" href="{% url 'store_view' %}">En commander</a>
-        </div>
-      </div>
       <!-- Nested row for non-featured blog posts-->
       <div class="row">
         {% with posts.count as nb_post %}

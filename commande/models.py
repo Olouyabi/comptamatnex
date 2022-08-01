@@ -39,7 +39,7 @@ class Product(models.Model):
     price = models.FloatField(verbose_name='Prix')
     description = models.TextField(null=True, blank=False)
     digital = models.BooleanField(default=False, null=True, blank=False)
-    image = models.ImageField(null=True, blank=False)
+    image = models.ImageField(upload_to='formats', default='assets/commande/book-order-bg.jpg')
 
 
     def __str__(self) :
