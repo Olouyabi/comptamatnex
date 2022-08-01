@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block subtitle %} Blog+ {% endblock subtitle %}
+{% block heroview  %}
 <div class="col-lg-12 col-xl-12 col-xxl-12">
     <div class="my-5 text-center text-xl-start">
         <h1 class="display-5 fw-bolder hero-title mb-3 text-center">
@@ -28,8 +29,7 @@
                         Posté le {{ post.date_publication }} par {{post.auteur.first_name}} {{post.auteur.last_name}}
                     </div>
                     <!-- Post categories-->
-                    <a class="badge bg-secondary text-decoration-none link-light" href="#!">Inventaire des matières</a>
-
+                    <span class="badge bg-secondary text-decoration-none link-light">Inventaire des matières</span>
                 </header>
                 <!-- Preview image figure-->
                 <figure class="mb-4">
