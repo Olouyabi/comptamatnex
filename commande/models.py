@@ -14,13 +14,16 @@ from phonenumber_field.modelfields import PhoneNumberField
 class Customer(models.Model):
     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE, verbose_name='Utilisateur')
     name = models.CharField(max_length=200, null=True, verbose_name='nom')
-    email = models.EmailField(max_length=200, null=True)
+    bio = models.TextField(default="Aucun bio n'est disponible...")
+    avatar = models.ImageField(upload_to='customers', default='assets/imgs-blog/avatar-defualt.jpg')
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = "Client"
 
     def __str__(self) :
-        return self.name
+        return self.user.username
 
 
 class VersionLivre(models.Model):

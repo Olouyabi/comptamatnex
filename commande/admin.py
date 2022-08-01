@@ -5,7 +5,7 @@ from commande.models import*
 
 @admin.register(Customer)
 class CustomerAdmin(admin.ModelAdmin):
-    list_display = ('user', 'name', 'email',)
+    list_display = ('user', 'name', 'created',)
     search_fields = ('user',)
     ordering = ('user', )
     list_filter = ('user',)
