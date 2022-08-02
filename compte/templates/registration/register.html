@@ -23,34 +23,34 @@
                 <!-- data-sb-form-api-token="API_TOKEN" -->
                 {% csrf_token %}
                 <div class="form-floating mb-3">
-                    <input class="form-control" id="username" type="text" placeholder="Nom du client" data-sb-validations="required" name="username"/>
-                    <label for="username">Nom d'utilisateur</label>
+                    {{user_form.username}}
+                    <label for="{{user_form.username.id_for_label}}">Nom d'utilisateur</label>
                     <div class="invalid-feedback" data-sb-feedback="username:required">Le nom d'utilisateur est obligatoire.</div>
                 </div>
                 <div class="form-floating mb-3">
-                    <input class="form-control" id="prenom" type="text" placeholder="Prénom" name="prenom"/>
-                    <label for="prenom">Prénom</label>
-                    <!-- <div class="invalid-feedback" data-sb-feedback="prenom:required">Le nom est obligatoire.</div> -->
+                    {{user_form.first_name}}
+                    <label for="{{user_form.first_name.id_for_label}}">Prénom</label>
+                    <div class="invalid-feedback" data-sb-feedback="prenom:required">Le prénom est obligatoire.</div>
                 </div>
                 <div class="form-floating mb-3">
-                    <input class="form-control" id="nom" type="text" placeholder="Nom" name="nom"/>
-                    <label for="nom">Nom</label>
-                    <!-- <div class="invalid-feedback" data-sb-feedback="nom:required">Le nom est obligatoire.</div> -->
+                    {{user_form.last_name}}
+                    <label for="{{user_form.last_name.id_for_label}}">Nom</label>
+                    <div class="invalid-feedback" data-sb-feedback="nom:required">Le nom est obligatoire.</div>
                 </div>
                 <div class="form-floating mb-3">
-                    <input class="form-control" id="member-email" type="email" placeholder="Adresse mail"  name="email"/>
-                    <label for="member-email">Adresse mail</label>
-                    <!-- <div class="invalid-feedback" data-sb-feedback="adresseMail:required">L'adresse mail est obligatoire.</div> -->
+                    {{user_form.email}}
+                    <label for="{{user_form.email.id_for_label}}">Adresse mail</label>
+                    <div class="invalid-feedback" data-sb-feedback="adresseMail:required">L'adresse mail est obligatoire.</div>
                     <div class="invalid-feedback" data-sb-feedback="adresseMail:email">L'adresse mail n'est pas valide.</div>
                 </div>
                 <div class="form-floating mb-3">
-                    <input class="form-control" id="member-password" type="password" placeholder="Mot de passe" data-sb-validations="required" name="member-password"/>
-                    <label for="member-password">Mot de passe</label>
+                    {{user_form.password}}
+                    <label for="{{user_form.password.id_for_label}}">Mot de passe</label>
                     <div class="invalid-feedback" data-sb-feedback="member-password:required">Le mot de passe est obligatoire.</div>
                 </div>
                 <div class="form-floating mb-3">
-                    <input class="form-control" id="shippingid" type="text" placeholder="Code de livraison" data-sb-validations="required" name="shippingid"/>
-                    <label for="shippingid">Code de livraison</label>
+                    {{user_form.shipping_id}}
+                    <label for="{{user_form.shipping_id.id_for_label}}">Code de livraison</label>
                     <div class="invalid-feedback" data-sb-feedback="shippingid:required">Le code de livraison est obligatoire.</div>
                 </div>
                 <div class="d-grid">
