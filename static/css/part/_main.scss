@@ -197,8 +197,9 @@ blockquote {
          width: 100% !important;
       }
 
+      &#formulaire-register,
       &#formulaire-login {
-         width: 30%;
+         width: 50%;
 
          @include respond-below(md) {
             width: 100% !important;

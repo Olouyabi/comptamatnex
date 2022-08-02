@@ -12411,12 +12411,12 @@ blockquote:before {
   }
 }
 
-.form-bg .formulaire#formulaire-login {
-  width: 30%;
+.form-bg .formulaire#formulaire-register, .form-bg .formulaire#formulaire-login {
+  width: 50%;
 }
 
 @media (max-width: 991px) {
-  .form-bg .formulaire#formulaire-login {
+  .form-bg .formulaire#formulaire-register, .form-bg .formulaire#formulaire-login {
     width: 100% !important;
   }
 }

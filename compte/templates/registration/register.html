@@ -15,8 +15,55 @@
 </div>
 
 {% endblock heroview %}
-
 {% block content %}
-
+<section class="register" id="register">
+    <div class="container px-5 my-3 parenter">
+        <div class="form-bg">
+            <form class="formulaire" id="formulaire-register" action="" method="POST">
+                <!-- data-sb-form-api-token="API_TOKEN" -->
+                {% csrf_token %}
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="username" type="text" placeholder="Nom du client" data-sb-validations="required" name="username"/>
+                    <label for="username">Nom d'utilisateur</label>
+                    <div class="invalid-feedback" data-sb-feedback="username:required">Le nom d'utilisateur est obligatoire.</div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="prenom" type="text" placeholder="Prénom" name="prenom"/>
+                    <label for="prenom">Prénom</label>
+                    <!-- <div class="invalid-feedback" data-sb-feedback="prenom:required">Le nom est obligatoire.</div> -->
+                </div>
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="nom" type="text" placeholder="Nom" name="nom"/>
+                    <label for="nom">Nom</label>
+                    <!-- <div class="invalid-feedback" data-sb-feedback="nom:required">Le nom est obligatoire.</div> -->
+                </div>
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="member-email" type="email" placeholder="Adresse mail"  name="email"/>
+                    <label for="member-email">Adresse mail</label>
+                    <!-- <div class="invalid-feedback" data-sb-feedback="adresseMail:required">L'adresse mail est obligatoire.</div> -->
+                    <div class="invalid-feedback" data-sb-feedback="adresseMail:email">L'adresse mail n'est pas valide.</div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="member-password" type="password" placeholder="Mot de passe" data-sb-validations="required" name="member-password"/>
+                    <label for="member-password">Mot de passe</label>
+                    <div class="invalid-feedback" data-sb-feedback="member-password:required">Le mot de passe est obligatoire.</div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="shippingid" type="text" placeholder="Code de livraison" data-sb-validations="required" name="shippingid"/>
+                    <label for="shippingid">Code de livraison</label>
+                    <div class="invalid-feedback" data-sb-feedback="shippingid:required">Le code de livraison est obligatoire.</div>
+                </div>
+                <div class="d-grid">
+                    <button class="btn btn-danger btn-ne btn-lg" id="submitButton" type="submit">
+                        Soumettre
+                    </button>
+                </div>
+            </form>
+            <div class="not_login text-center">
+                <a href=" {% url 'login_view' %} " class="register">Se connecter ?</a>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock content %}

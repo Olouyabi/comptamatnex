@@ -14,8 +14,6 @@ from phonenumber_field.modelfields import PhoneNumberField
 class Customer(models.Model):
     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE, verbose_name='Utilisateur')
     name = models.CharField(max_length=200, null=True, verbose_name='nom')
-    bio = models.TextField(default="Aucun bio n'est disponible...")
-    avatar = models.ImageField(upload_to='customers', default='assets/imgs-blog/avatar-defualt.jpg')
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -110,24 +108,33 @@ class OrderItem(models.Model):
 
 
 class ShippingAddress(models.Model):
-    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="Client")
-    order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="Commande")
+    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, verbose_name="Client")
+    order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True, verbose_name="Commande")
     pays = models.CharField(max_length=200, null=True)
     ville = models.CharField(max_length=200, null=True)
     adresse = models.CharField(max_length=200, null=True)
-    telephone = PhoneNumberField(null = True, blank = True)
+    telephone = PhoneNumberField(null = True)
     date_added = models.DateTimeField(auto_now_add=True, verbose_name="Date d'ajout au panier")
+    shipping_id = models.CharField(max_length=100, blank=True, verbose_name='Code de livraison')
 
     class Meta:
-        verbose_name = "Adresse de livraison"
-        verbose_name_plural =  "Adresse de livraison"
+        verbose_name = "Infos de livraison"
+        verbose_name_plural =  "Infos de livraison"
 
+    def __str__(self) -> str:
+        return self.shipping_id
 
 
 # def pre_save_create_order_id(sender, instance, *args, **kwargs):
 #     if not instance.order_id:
 #         instance.order_id = unique_order_id_generator(instance)
 # pre_save.connect(pre_save_create_order_id, sender=Order)
+
+
+def pre_save_create_shipping_id(sender, instance, *args, **kwargs):
+    if not instance.shipping_id:
+        instance.shipping_id = unique_order_id_generator(instance)
+pre_save.connect(pre_save_create_shipping_id, sender=ShippingAddress)
 
 
 

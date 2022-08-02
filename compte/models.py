@@ -1,16 +1,20 @@
+from tabnanny import verbose
 from django.db import models
-from django.contrib.auth.models import User
-from commande.models import Order, Customer
+
 
 
 class MembreUser(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    # client = models.OneToOneField(Order, on_delete=models.CASCADE, related_name="customer")
-    # email_client = models.OneToOneField(Customer, on_delete=models.CASCADE, related_name="email")
-    # achat_id = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True, blank=True, related_name="order_id")
-
+    username = models.CharField(max_length=200, null=True, blank=False, verbose_name="Nom d'utilisateur")
+    first_name = models.CharField(max_length=200, null=True, blank=True, verbose_name="Prénom")
+    last_name = models.CharField(max_length=200, null=True, blank=True, verbose_name="Prénom")
+    password = models.CharField(max_length=20, null=True, blank=False, verbose_name="Mot de passe")
+    shipping_id = models.CharField(max_length=20, null=True, blank=False, verbose_name="Code de livraison")
+    bio = models.TextField(default="Aucun bio n'est disponible...")
+    avatar = models.ImageField(upload_to='members', default='assets/imgs-blog/avatar-defualt.jpg')
+    
     class Meta:
-        verbose_name = "Membre"
+        verbose_name = 'Membre'
 
-    def __str__(self):
-        return self.client
+    def __str__(self) -> str:
+        return self.username
+
