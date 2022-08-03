@@ -13,6 +13,8 @@ class CommentForm(forms.ModelForm):
         attrs={'class':'form-control'}
     ))
     commentaire = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control', 'rows': 3}))
+    
+    
     class Meta:
         model = Commentaire
         fields = ['commentataire', 'email', 'commentaire']

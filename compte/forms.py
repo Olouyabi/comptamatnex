@@ -50,7 +50,7 @@ class RegistrationForm(forms.ModelForm):
     }))
     shipping_id = forms.CharField(max_length=20, label="Code de livraison", required=True, widget=forms.TextInput(attrs={
         'class':"form-control", 
-        'id':"shippingid", 
+        'id':"shipping_id", 
         'type':"text", 
         'placeholder':"Code de livraison", 
         'data-sb-validations':"required",

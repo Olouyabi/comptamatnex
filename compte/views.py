@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login, logout
-
 from compte.forms import RegistrationForm
+from commande.models import ShippingAddress
 
 
 # Create your views here.
@@ -31,13 +31,21 @@ def register_view(request):
     if request.method == 'POST':
         user_form = RegistrationForm(request.POST)
         if user_form.is_valid():
-            new_user = user_form.save(commit=False)
-            new_user.set_password(user_form.cleaned_data['password'])
-            new_user.save()
-            return redirect('login_view')
+            try:
+                shippingid = request.POST['shipping_id']
+                shipping_id = ShippingAddress.objects.get(shipping_id=shippingid)
+                if shipping_id != None:
+                    new_user = user_form.save(commit=False)
+                    new_user.save()
+                    return redirect('login_view')
+                else:
+                    return render(request, 'registration/register.html', {'user_form': user_form})
+            except:
+                return render(request, 'registration/register.html', {'user_form': user_form})
         else:
             return render(request, 'registration/register.html', {'user_form': user_form})
     else:
         user_form = RegistrationForm()
         return render(request, 'registration/register.html', {'user_form':user_form})
+
 
