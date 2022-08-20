@@ -73,7 +73,7 @@ def mouvement_article(request):
     orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
 
     if action == 'add':
-        orderItem.quantity = (orderItem.quantity + 1)
+        orderItem.quantity = (orderItem.quantity + 1) 
     elif  action == 'remove':
         orderItem.quantity = (orderItem.quantity - 1)
 
@@ -81,11 +81,8 @@ def mouvement_article(request):
     
     if orderItem.quantity <= 0:
         orderItem.delete()
-    # return JsonResponse('article est ajouté', safe=False)
-
 
 # from django.views.decorators.csrf import csrf_protect
-
 # @csrf_protect
 def process_order(request):
     order_id = datetime.datetime.now().timestamp()

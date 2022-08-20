@@ -8,7 +8,7 @@ from compte.models import MembreUser
 # class MembreUserInline(admin.StackedInline):
 #     model = MembreUser
 #     can_delete = False
-#     verbose_name_plural = 'Membres'
+#     verbose_name_plural = 'Vip'
 
 
 # class CustomizedUserAdmin (UserAdmin):

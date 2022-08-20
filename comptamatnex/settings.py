@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'commande.apps.CommandeConfig',
     'compte.apps.CompteConfig',
-    'membres.apps.MembresConfig',
+    'vip.apps.VipConfig',
     'contact.apps.ContactConfig',
 
     "phonenumber_field",

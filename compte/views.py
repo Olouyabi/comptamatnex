@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login, logout
 from compte.forms import RegistrationForm
 from commande.models import ShippingAddress
-
+from compte.models import MembreUser
 
 # Create your views here.
 def login_view(request):
@@ -22,6 +22,26 @@ def login_view(request):
         return redirect('membre_view')
 
 
+# Create your views here.
+# def login_view(request):
+
+#     if request.method == 'POST':
+#         username = request.POST['username']
+#         password = request.POST['password']
+#         member = MembreUser.objects.all()
+#         print(member)
+#         try:
+#             if member is not None:
+#                 login(request, member)
+#                 return redirect('membre_view')
+#             else:
+#                 return render(request, 'registration/login.html', {})
+#         except:
+#             return render(request, 'registration/login.html', {})
+#     else:
+#         return render(request, 'registration/login.html', {})
+
+
 def logout_view(request):
     logout(request)
     return redirect('login_view')
@@ -34,7 +54,7 @@ def register_view(request):
             try:
                 shippingid = request.POST['shipping_id']
                 shipping_id = ShippingAddress.objects.get(shipping_id=shippingid)
-                if shipping_id != None:
+                if shipping_id is not None:
                     new_user = user_form.save(commit=False)
                     new_user.save()
                     return redirect('login_view')

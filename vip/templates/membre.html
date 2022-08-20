@@ -29,60 +29,40 @@
       <!-- Blog entries-->
       <div class="col-lg-8">
         <!-- Featured blog post-->
-        <div class="card mb-4">
-          <a href="#!"
-            ><img
-              class="card-img-top"
-              src="{% static 'assets/imgs-blog/first-blog-bg.png' %}"
-              alt="..."
-          /></a>
-          <div class="card-body">
-            <!-- <div class="small text-muted">January 1, 2022</div> -->
-            <h2 class="card-title text-yel">Extrait du livre</h2>
-            <p class="card-text">
-              ...La valeur d’origine de la matière fongible recensée lors de
-              l’inventaire initial du patrimoine non financier de l’organisme
-              public équivaut alors à la valeur correspondant au format de la
-              matière fongible figurant dans le « Répertoire de la mercuriale des
-              prix adaptée au format de la matière fongible », en tant que
-              première donnée de base pour estimer sa valeur d’inventaire...
-            </p>
-            <p class="reference-cmenex text-muted">Page 100</p>
-          </div>
-        </div>
+        
         <!-- Nested row for non-featured blog posts-->
         <div class="row">
-          {% with posts.count as nb_post %}
-              {% if nb_post == 0 %}
+
+          {% with qs.count as nb_qs %}
+              {% if nb_qs == 0 %}
                   <p class="text-center">Aucun post n'est disponible pour le moment !</p>
               {% else %} 
-                  {% for post in posts %}
-                  <div class="col-lg-6">
-                  <!-- Blog post-->
-                  <div class="card h-100 mb-4">
-                      <a href="{{post.get_absolute_url}}"
-                      ><img
-                          class="card-img-top"
-                          src="{% static 'assets/imgs-blog/blog-post-bg.png' %}"
-                          alt="image illustrant la publication"
-                          title="Lire plus →"
-                      /></a>
-                      <div class="card-body">
-                      <div class="small text-muted">Posté depuis {{post.date_publication|timesince}}</div>
-                      <h2 class="card-title post-title">{{post.titre}}</h2>
-                      <p class="card-text">
-                          <!-- {{ post.contenu | safe }} -->
-                          {{post.contenu | safe | truncatechars:150}}
-                      </p>
-                      <a class="btn btn-primary" href=" {{post.get_absolute_url}} ">
-                          Lire plus →
+                  {% for post in qs %}
+                  <div class="card mb-4">
+                    <a href="#!">
+                      <img
+                        class="card-img-top"
+                        src="{% static 'assets/imgs-blog/first-blog-bg.png' %}"
+                        alt="..." />
                       </a>
-                      </div>
-                  </div>
+                    <div class="card-body">
+                      <!-- <div class="small text-muted">January 1, 2022</div> -->
+                      <h2 class="card-title text-yel"> {{post}} </h2>
+                      <p class="card-text">
+                        ...La valeur d’origine de la matière fongible recensée lors de
+                        l’inventaire initial du patrimoine non financier de l’organisme
+                        public équivaut alors à la valeur correspondant au format de la
+                        matière fongible figurant dans le « Répertoire de la mercuriale des
+                        prix adaptée au format de la matière fongible », en tant que
+                        première donnée de base pour estimer sa valeur d’inventaire...
+                      </p>
+                      <p class="reference-cmenex text-muted">Page 100</p>
+                    </div>
                   </div>
                   {% endfor %} 
               {% endif %} 
           {% endwith %}
+       
         </div>
         <!-- Pagination-->
         {% include 'layout/pagination.html' with page=posts %}
