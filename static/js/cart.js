@@ -7,9 +7,11 @@ for(var i=0; i < updateBtns.length; i++){
     var action = this.dataset.action
   
     if(user === 'AnonymousUser'){
+      console.log('Inconnue')
       addCookieItem(productId, action)
     }
     else{
+      console.log(user)
       updateUserOrder(productId, action)
     }
   })
