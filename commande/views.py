@@ -81,6 +81,8 @@ def mouvement_article(request):
     
     if orderItem.quantity <= 0:
         orderItem.delete()
+        
+    return JsonResponse('Données envoyées avec succès', safe=False)
 
 # from django.views.decorators.csrf import csrf_protect
 # @csrf_protect

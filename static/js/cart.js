@@ -7,7 +7,6 @@ for(var i=0; i < updateBtns.length; i++){
     var action = this.dataset.action
   
     if(user === 'AnonymousUser'){
-      console.log('Inconnue')
       addCookieItem(productId, action)
     }
     else{
@@ -41,7 +40,7 @@ function addCookieItem(productId, action){
 
 
 function updateUserOrder(productId, action){
-  var url = '/commande/mouvement_article/'
+  var url = '/mouvement_article/'
 
   fetch(
     url, 

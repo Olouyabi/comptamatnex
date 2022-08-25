@@ -41,7 +41,7 @@
     </title>
 
     <script type="text/javascript">
-        var user = '{{request.user}}'
+        var user = '{{request.user}}' ;
 
         function getToken(name) {
         let cookieValue = null;
@@ -60,7 +60,6 @@
         }
         const csrftoken = getToken('csrftoken');
 
-
         function getCookie(name){
             var cookieArr = document.cookie.split(';');
 
@@ -73,6 +72,7 @@
             }
             return null
         }
+        
         var cart = JSON.parse(getCookie('cart'))
         if(cart == undefined){
             cart = {}

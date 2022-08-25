@@ -7,7 +7,10 @@ from tomlkit import item
 from comptamatnex.utilitaires import unique_order_id_generator
 from phonenumber_field.modelfields import PhoneNumberField
 
-
+FORMAT_LIVRE = (
+    ('FI', 'Format imprimé'),
+    ('FN', 'Format numérique'),
+)
 
 # Create your models here. Commande
 
