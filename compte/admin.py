@@ -1,5 +1,5 @@
 from django.contrib import admin
-from compte.models import MembreUser
+from compte.models import MembreUser, Relationship
 # from django.contrib.auth.models import User
 # from django.contrib.auth.admin import UserAdmin
 
@@ -19,3 +19,4 @@ from compte.models import MembreUser
 # admin.site.register(User, CustomizedUserAdmin)
 
 admin.site.register(MembreUser)
+admin.site.register(Relationship)

@@ -15,6 +15,15 @@ from pathlib import Path
 import django_heroku
 import  dj_database_url
 
+import moneyed
+
+# BOB = moneyed.add_currency(
+#     code='BOB',
+#     numeric='068',
+#     name='Peso boliviano',
+#     countries=('BOLIVIA', )
+# )
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -40,6 +49,9 @@ INSTALLED_APPS = [
     'admin_interface',
     'colorfield',
 
+    # 'djmoney',
+    # 'djmoney.contrib.exchange',
+  
     # Les applications natives de django
     'django.contrib.admin',
     'django.contrib.auth',
@@ -137,6 +149,8 @@ LANGUAGE_CODE = 'fr'
 TIME_ZONE = 'Africa/Porto-Novo'
 
 USE_I18N = True
+USE_L10N = True
+USE_THOUSAND_SEPARATOR = True
 
 USE_TZ = True
 
@@ -232,3 +246,6 @@ JET_THEMES = [
         'title': 'Light Gray'
     }
 ]
+
+
+# CURRENCIES = ('USD', 'BOB')

@@ -4,6 +4,7 @@ from compte.forms import RegistrationForm
 from commande.models import ShippingAddress
 from compte.models import MembreUser
 
+
 # Create your views here.
 def login_view(request):
     if not request.user.is_authenticated:
@@ -20,26 +21,6 @@ def login_view(request):
             return render(request, 'registration/login.html', {})
     else:
         return redirect('membre_view')
-
-
-# Create your views here.
-# def login_view(request):
-
-#     if request.method == 'POST':
-#         username = request.POST['username']
-#         password = request.POST['password']
-#         member = MembreUser.objects.all()
-#         print(member)
-#         try:
-#             if member is not None:
-#                 login(request, member)
-#                 return redirect('membre_view')
-#             else:
-#                 return render(request, 'registration/login.html', {})
-#         except:
-#             return render(request, 'registration/login.html', {})
-#     else:
-#         return render(request, 'registration/login.html', {})
 
 
 def logout_view(request):
@@ -59,10 +40,13 @@ def register_view(request):
                     new_user.save()
                     return redirect('login_view')
                 else:
+                    print('Impossible de se connecter N1 !')
                     return render(request, 'registration/register.html', {'user_form': user_form})
             except:
+                print('Impossible de se connecter N2 !')
                 return render(request, 'registration/register.html', {'user_form': user_form})
         else:
+            print('Impossible de se connecter N3 !')
             return render(request, 'registration/register.html', {'user_form': user_form})
     else:
         user_form = RegistrationForm()

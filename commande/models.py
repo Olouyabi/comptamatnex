@@ -7,6 +7,11 @@ from tomlkit import item
 from comptamatnex.utilitaires import unique_order_id_generator
 from phonenumber_field.modelfields import PhoneNumberField
 
+from djmoney.models.fields import MoneyField
+from django.db import models
+
+from django_countries.fields import CountryField
+
 FORMAT_LIVRE = (
     ('FI', 'Format imprimé'),
     ('FN', 'Format numérique'),
@@ -40,6 +45,7 @@ class VersionLivre(models.Model):
 
 class Product(models.Model):
     name = models.ForeignKey(VersionLivre, on_delete=models.CASCADE, related_name="formats_livre", verbose_name='Version')
+    # price = MoneyField(max_digits=19, decimal_places=4, default_currency='USD', verbose_name='Prix')
     price = models.FloatField(verbose_name='Prix')
     description = models.TextField(null=True, blank=False)
     digital = models.BooleanField(default=False, null=True, blank=False)
@@ -113,7 +119,8 @@ class OrderItem(models.Model):
 class ShippingAddress(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, verbose_name="Client")
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True, verbose_name="Commande")
-    pays = models.CharField(max_length=200, null=True)
+    # pays = models.CharField(max_length=200, null=True)
+    pays = CountryField(blank=True)
     ville = models.CharField(max_length=200, null=True)
     adresse = models.CharField(max_length=200, null=True)
     telephone = PhoneNumberField(null = True)

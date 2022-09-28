@@ -11684,6 +11684,15 @@ textarea {
   vertical-align: middle;
 }
 
+.member-profile tr td {
+  display: inline-block;
+  margin-left: 3rem !important;
+}
+
+.member-friend {
+  list-style-type: none;
+}
+
 @media (max-width: 1024px) {
   .table thead {
     display: none;

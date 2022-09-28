@@ -16,7 +16,12 @@
         <h1 class="display-5 fw-bolder hero-title mb-2 text-center">
             Bienvenue, Membre ComptaMat NEx !
         </h1>
-        <h4 class="text-center text-yel">{{user.username|title}}</h4>
+        <h1 class="text-center mt-5">
+          <img class="member-avatar" src="{{member.avatar.url}}" />
+        </h1>
+        <p class="text-center">
+          {{member}}
+        </p>
     </div>
 </div>
 
@@ -47,14 +52,9 @@
                       </a>
                     <div class="card-body">
                       <!-- <div class="small text-muted">January 1, 2022</div> -->
-                      <h2 class="card-title text-yel"> {{post}} </h2>
+                      <h2 class="card-title text-yel"> {{post.title}} </h2>
                       <p class="card-text">
-                        ...La valeur d’origine de la matière fongible recensée lors de
-                        l’inventaire initial du patrimoine non financier de l’organisme
-                        public équivaut alors à la valeur correspondant au format de la
-                        matière fongible figurant dans le « Répertoire de la mercuriale des
-                        prix adaptée au format de la matière fongible », en tant que
-                        première donnée de base pour estimer sa valeur d’inventaire...
+                        {{post.body}}
                       </p>
                       <p class="reference-cmenex text-muted">Page 100</p>
                     </div>
@@ -106,17 +106,70 @@
         </div>
         <!-- Side widget-->
         <div class="card mb-4">
-          <div class="card-header">Votre profile</div>
+          <div class="card-header">Mon profile</div>
           <div class="card-body">
-            <h3>Nom</h3>
-            <p>Mail</p>
-            <p>Téléphone</p>
-            <p>Code de membre</p>
+            <table class="member-profile">
+              <tr>
+                <th>
+                  Pseudo
+                </th>
+                <td>
+                  {{member.user}}
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Utilisateur
+                </th>
+                <td>
+                  {{member.first_name}} {{member.last_name}}
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Mail
+                </th>
+                <td>
+                  {{member.email}}
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Code
+                </th>
+                <td>
+                  {{member.slug}}
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Bio
+                </th>
+                <td>
+                  {{member.bio}}
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  Ami ({{member.get_friends_nb}})
+                </th>
+                <td>
+                  
+                </td>
+              </tr>
+            </table>
+            <ul class="member-friend">
+              {% for friend in member.get_friends %}
+                <li>
+                  {{friend}}
+                <li>
+              {% endfor %}
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
   
-
 {% endblock content %}
+
