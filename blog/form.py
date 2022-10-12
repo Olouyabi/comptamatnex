@@ -18,3 +18,11 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Commentaire
         fields = ['commentataire', 'email', 'commentaire']
+
+
+class SearchPost(forms.Form):
+    query = forms.CharField(max_length=200)
+
+
+    class Meta:
+        fields = ['query']

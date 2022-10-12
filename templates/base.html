@@ -101,7 +101,7 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         {% block navbaritem %}
                         <li class="nav-item"><a class="nav-link {% if navbar == 'hero' %} active {% endif %}" href="{% url 'home_view' %}">Accueil</a></li>
-                        <li class="nav-item "><a class="nav-link" href="{% url 'home_view' %}#features"><span
+                        <li class="nav-item "><a class="nav-link" href="{% url 'home_view' %}#apropos"><span
                                     class="text-capitalize">à</span> propos</a></li>
                         <li class="nav-item"><a class="nav-link {% if navbar == 'store' %} active {% endif %}" href="{% url 'store_view' %}">Commander</a></li>
                         <li class="nav-item"><a class="nav-link {% if navbar == 'blog' %} active {% endif %}" href="{% url 'post_list' %}">Blog</a></li>
@@ -129,7 +129,7 @@
                             </p>
                             <!-- <h3 class="text-yel pb-3"></h3> -->
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                <a class="btn btn-ne btn-lg px-4 me-sm-3" href="#features">En savoir plus</a>
+                                <a class="btn btn-ne btn-lg px-4 me-sm-3" href="#apropos">En savoir plus</a>
                                 <a class="btn btn-lg px-4 btn-cme-order" href="{% url 'store_view' %}">En commander</a>
                             </div>
                         </div>
@@ -163,7 +163,7 @@
                     <div class="small m-0 text-white">Copyright &copy; ComptaMat NEx {% now 'Y' %} </div>
                 </div>
                 <div class="col-auto">
-                    <a class="link-light small" href="{% url 'home_view' %}#features"><span
+                    <a class="link-light small" href="{% url 'home_view' %}#apropos"><span
                             class="text-capitalize">à</span> propos</a>
                     <span class="text-white mx-1">&middot;</span>
                     <a class="link-light small" href="{% url 'post_list' %}">Blog</a>

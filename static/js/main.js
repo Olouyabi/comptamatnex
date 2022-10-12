@@ -90,4 +90,17 @@ $.ajax({
         const data = JSON.parse(response.data)
         console.log(data)
     }
-})
+});
+
+var recherchePost = document.getElementById('recherche-post').value;
+var searchButton = document.getElementById('button-search')
+
+searchButton.addEventListener('click',
+function(){
+    if(recherchePost===""){
+        alert("Vueillez entrer un thème à rechercher !")
+    }})
+
+
+
+

@@ -1,0 +1,114 @@
+[
+{
+  "model": "commande.customer",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "name": null,
+    "created": "2022-08-25T06:25:28.951Z",
+    "updated": "2022-08-25T06:25:28.951Z"
+  }
+},
+{
+  "model": "commande.customer",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "name": null,
+    "created": "2022-08-25T16:00:44.988Z",
+    "updated": "2022-08-25T16:00:44.988Z"
+  }
+},
+{
+  "model": "commande.customer",
+  "pk": 3,
+  "fields": {
+    "user": 3,
+    "name": null,
+    "created": "2022-08-30T06:35:52.200Z",
+    "updated": "2022-08-30T06:35:52.200Z"
+  }
+},
+{
+  "model": "commande.versionlivre",
+  "pk": 1,
+  "fields": {
+    "version": "version imprimée",
+    "slug": "version-imprimee"
+  }
+},
+{
+  "model": "commande.versionlivre",
+  "pk": 2,
+  "fields": {
+    "version": "version numérique",
+    "slug": "version-numerique"
+  }
+},
+{
+  "model": "commande.product",
+  "pk": 1,
+  "fields": {
+    "name": 1,
+    "price": 15000.0,
+    "description": "Format 23x28cm, 222 pages, couleur de la couverture: blanc et bleu, poids net 12g.",
+    "digital": false,
+    "image": "formats/book-print-bg_XeHl9Nc.jpg"
+  }
+},
+{
+  "model": "commande.product",
+  "pk": 2,
+  "fields": {
+    "name": 2,
+    "price": 8000.0,
+    "description": "Format 23x28cm, 202pages, couleur de la couverture: blanc et bleu.",
+    "digital": false,
+    "image": "formats/book-epub-bg_p69smZ6.jpg"
+  }
+},
+{
+  "model": "commande.order",
+  "pk": 1,
+  "fields": {
+    "customer": 1,
+    "date_ordered": "2022-08-25T06:26:00.392Z",
+    "complete": true,
+    "order_id": ""
+  }
+},
+{
+  "model": "commande.order",
+  "pk": 2,
+  "fields": {
+    "customer": 1,
+    "date_ordered": "2022-08-25T16:18:18.578Z",
+    "complete": false,
+    "order_id": ""
+  }
+},
+{
+  "model": "commande.orderitem",
+  "pk": 3,
+  "fields": {
+    "product": 1,
+    "order": 1,
+    "quantity": 2,
+    "date_added": "2022-08-25T16:16:32.920Z"
+  }
+},
+{
+  "model": "commande.shippingaddress",
+  "pk": 1,
+  "fields": {
+    "customer": 2,
+    "order": 1,
+    "pays": "Benin",
+    "ville": "Abomey-Calavi",
+    "adresse": "Carrefour Zogbadjè",
+    "telephone": "+22966267515",
+    "date_added": "2022-08-25T16:18:11.339Z",
+    "shipping_id": "crezgx7acg"
+  }
+}
+]

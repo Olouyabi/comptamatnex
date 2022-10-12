@@ -1,0 +1,38 @@
+[
+{
+  "model": "vip.vipost",
+  "pk": 1,
+  "fields": {
+    "picture": "",
+    "title": "Blog 1",
+    "body": "Je suis un expert comptable intenationale",
+    "created": "2022-08-26T06:53:07.529Z",
+    "updated": "2022-08-26T06:53:07.529Z",
+    "liked": []
+  }
+},
+{
+  "model": "vip.vipost",
+  "pk": 2,
+  "fields": {
+    "picture": "",
+    "title": "Blog 2",
+    "body": "Je suis un expert informaticien",
+    "created": "2022-08-26T06:53:23.032Z",
+    "updated": "2022-08-26T06:53:23.032Z",
+    "liked": []
+  }
+},
+{
+  "model": "vip.vipost",
+  "pk": 3,
+  "fields": {
+    "picture": "",
+    "title": "Blog 3",
+    "body": "Vous allez aimer mes publications",
+    "created": "2022-08-26T06:53:48.879Z",
+    "updated": "2022-08-26T06:53:48.879Z",
+    "liked": []
+  }
+}
+]

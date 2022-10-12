@@ -61,24 +61,31 @@
     </div>
     <!-- Side widgets-->
     <div class="col-lg-4">
+
       <!-- Search widget-->
       <div class="card mb-4">
         <div class="card-header">Rechercher</div>
         <div class="card-body">
-          <div class="input-group">
-            <input
-              class="form-control"
-              type="text"
-              placeholder="Entrer un thème..."
-              aria-label="Enter search term..."
-              aria-describedby="button-search"
-            />
-            <button class="btn btn-primary" id="button-search" type="button">
-              On y va !
-            </button>
-          </div>
+          <form action="{% url 'recherche_post' %}" method="get">
+            <div class="input-group">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Entrer un thème..."
+                aria-label="Enter search term..."
+                aria-describedby="button-search"
+                required
+                name="recherche-post"
+                id="recherche-post"
+              />
+              <button class="btn btn-primary" id="button-search" type="submit">
+                On y va !
+              </button>
+            </div>
+          </form>
         </div>
       </div>
+
       <!-- Categories widget-->
       <div class="card mb-4">
         <div class="card-header">Catégories</div>

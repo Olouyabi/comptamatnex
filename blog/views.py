@@ -1,9 +1,11 @@
 from multiprocessing import context
+from unittest import result
 from django.shortcuts import get_object_or_404, render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib import messages
+from django.contrib.postgres.search import SearchVector
 
-from blog.form import CommentForm
+from blog.form import CommentForm, SearchPost
 from . models import CategorieDePost, Commentaire, Post
 
 
@@ -57,3 +59,25 @@ def post_detail(request, day:int, month:int, year:int, slug: str):
           'comment_form': comment_form,
           'navbar':'blog',
           })
+
+
+def recherche_post(request):
+    query = None
+    results = []
+    search_form = SearchPost()
+
+    if 'query' in request.GET:
+        search_form = SearchPost(request.GET)
+        
+        if search_form.is_valid():
+            query = search_form.cleaned_data['query']
+            results = Post.published.annotate(search=SearchVector('titre', 'contenu'),
+            ).filter(search=query)
+
+    context = {
+        'search_form': search_form,
+        'query': query,
+        'results': results,
+    }
+
+    return render(request, 'blog/recherche.html', context)

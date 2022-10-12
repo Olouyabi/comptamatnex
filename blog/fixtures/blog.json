@@ -1,0 +1,74 @@
+[
+{
+  "model": "blog.categoriedepost",
+  "pk": 1,
+  "fields": {
+    "nom_categorie": "inventaire des matières d'état",
+    "slug": "inventaire-des-matieres-detat"
+  }
+},
+{
+  "model": "blog.categoriedepost",
+  "pk": 2,
+  "fields": {
+    "nom_categorie": "la comptabilité publique",
+    "slug": "la-comptabilite-publique"
+  }
+},
+{
+  "model": "blog.categoriedepost",
+  "pk": 3,
+  "fields": {
+    "nom_categorie": "les agents inventoristes",
+    "slug": "les-agents-inventoristes"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 1,
+  "fields": {
+    "categorie_post": 1,
+    "titre": "La semaine des invetaires dans l'espace UEMOA",
+    "slug": "la-semaine-des-invetaires-dans-lespace-uemoa",
+    "contenu": "Les vidéos vous permettent de faire passer votre message de façon convaincante. Quand vous cliquez sur Vidéo en ligne, vous pouvez coller le code incorporé de la vidéo que vous souhaitez ajouter. Vous pouvez également taper un mot-clé pour rechercher en ligne la vidéo qui convient le mieux à votre document. Pour donner un aspect professionnel à votre document, Word offre des conceptions d’en-tête, de pied de page, de page de garde et de zone de texte qui se complètent mutuellement. Vous pouvez pas exemple ajouter une page de garde, un en-tête et une barre latérale identiques.\r\nCliquez sur Insérer et sélectionnez les éléments de votre choix dans les différentes galeries.Les thèmes et les styles vous permettent également de structurer votre document. Quand vous cliquez sur Création et sélectionnez un nouveau thème, les images, graphiques et SmartArt sont modifiés pour correspondre au nouveau thème choisi. Quand vous appliquez des styles, les titres changent pour refléter le nouveau thème. Gagnez du temps dans Word grâce aux nouveaux boutons qui s'affichent quand vous en avez besoin.\r\nSi vous souhaitez modifier la façon dont une image s’ajuste à votre document, cliquez sur celle-ci pour qu’un bouton d’options de disposition apparaisse en regard de celle-ci. Quand vous travaillez sur un tableau, cliquez à l’emplacement où vous souhaitez ajouter une ligne ou une colonne, puis cliquez sur le signe plus. La lecture est également simplifiée grâce au nouveau mode Lecture. Vous pouvez réduire certaines parties du document et vous concentrer sur le texte désiré. Si vous devez stopper la lecture avant d’atteindre la fin de votre document, Word garde en mémoire l’endroit où vous avez arrêté la lecture, même sur un autre appareil.\r\nLes vidéos vous permettent de faire passer votre message de façon convaincante. Quand vous cliquez sur Vidéo en ligne, vous pouvez coller le code incorporé de la vidéo que vous souhaitez ajouter. Vous pouvez également taper un mot-clé pour rechercher en ligne la vidéo qui convient le mieux à votre document. Pour donner un aspect professionnel à votre document, Word offre des conceptions d’en-tête, de pied de page, de page de garde et de zone de texte qui se complètent mutuellement. Vous pouvez pas exemple ajouter une page de garde, un en-tête et une barre latérale identiques.",
+    "image": "asses/imgs-blog/blog-bg.png",
+    "auteur": 1,
+    "date_creation": "2022-08-25T06:35:29.748Z",
+    "date_modification": "2022-08-25T06:35:29.748Z",
+    "status": "published",
+    "date_publication": "2022-08-25T06:33:57Z"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 2,
+  "fields": {
+    "categorie_post": 2,
+    "titre": "Echecs des comptes publics",
+    "slug": "echecs-des-comptes-publics",
+    "contenu": "Les vidéos vous permettent de faire passer votre message de façon convaincante. Quand vous cliquez sur Vidéo en ligne, vous pouvez coller le code incorporé de la vidéo que vous souhaitez ajouter. Vous pouvez également taper un mot-clé pour rechercher en ligne la vidéo qui convient le mieux à votre document. Pour donner un aspect professionnel à votre document, Word offre des conceptions d’en-tête, de pied de page, de page de garde et de zone de texte qui se complètent mutuellement. Vous pouvez pas exemple ajouter une page de garde, un en-tête et une barre latérale identiques.\r\nCliquez sur Insérer et sélectionnez les éléments de votre choix dans les différentes galeries.Les thèmes et les styles vous permettent également de structurer votre document. Quand vous cliquez sur Création et sélectionnez un nouveau thème, les images, graphiques et SmartArt sont modifiés pour correspondre au nouveau thème choisi. Quand vous appliquez des styles, les titres changent pour refléter le nouveau thème. Gagnez du temps dans Word grâce aux nouveaux boutons qui s'affichent quand vous en avez besoin.\r\nSi vous souhaitez modifier la façon dont une image s’ajuste à votre document, cliquez sur celle-ci pour qu’un bouton d’options de disposition apparaisse en regard de celle-ci. Quand vous travaillez sur un tableau, cliquez à l’emplacement où vous souhaitez ajouter une ligne ou une colonne, puis cliquez sur le signe plus. La lecture est également simplifiée grâce au nouveau mode Lecture. Vous pouvez réduire certaines parties du document et vous concentrer sur le texte désiré. Si vous devez stopper la lecture avant d’atteindre la fin de votre document, Word garde en mémoire l’endroit où vous avez arrêté la lecture, même sur un autre appareil.",
+    "image": "asses/imgs-blog/blog-bg.png",
+    "auteur": 1,
+    "date_creation": "2022-08-25T06:36:37.766Z",
+    "date_modification": "2022-08-25T06:36:37.766Z",
+    "status": "published",
+    "date_publication": "2022-08-25T06:35:29Z"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 3,
+  "fields": {
+    "categorie_post": 3,
+    "titre": "Les compétences des inventoristes",
+    "slug": "les-competences-des-inventoristes",
+    "contenu": "Les vidéos vous permettent de faire passer votre message de façon convaincante. Quand vous cliquez sur Vidéo en ligne, vous pouvez coller le code incorporé de la vidéo que vous souhaitez ajouter. Vous pouvez également taper un mot-clé pour rechercher en ligne la vidéo qui convient le mieux à votre document. Pour donner un aspect professionnel à votre document, Word offre des conceptions d’en-tête, de pied de page, de page de garde et de zone de texte qui se complètent mutuellement. Vous pouvez pas exemple ajouter une page de garde, un en-tête et une barre latérale identiques.",
+    "image": "asses/imgs-blog/blog-bg.png",
+    "auteur": 1,
+    "date_creation": "2022-08-25T06:37:46.709Z",
+    "date_modification": "2022-08-25T06:37:46.709Z",
+    "status": "published",
+    "date_publication": "2022-08-25T06:36:37Z"
+  }
+}
+]

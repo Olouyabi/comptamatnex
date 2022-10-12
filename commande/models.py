@@ -120,7 +120,7 @@ class ShippingAddress(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, verbose_name="Client")
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True, verbose_name="Commande")
     # pays = models.CharField(max_length=200, null=True)
-    pays = CountryField(blank=True)
+    pays = CountryField(blank=True, max_length=200)
     ville = models.CharField(max_length=200, null=True)
     adresse = models.CharField(max_length=200, null=True)
     telephone = PhoneNumberField(null = True)
