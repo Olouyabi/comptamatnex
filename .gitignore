@@ -7,3 +7,4 @@ staticfiles
 .first_dj_env
 db.sqlite3
 __pycache__/
+Procfile
