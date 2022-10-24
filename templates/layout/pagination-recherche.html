@@ -1,0 +1,36 @@
+<nav aria-label="Pagination">
+    <hr class="mt-5" />
+    <ul class="pagination justify-content-center my-4">
+      {% if results.has_previous %}
+      <li class="page-item">
+        <a
+          class="page-link"
+          href="?results={{results.previous_page_number}}"
+          tabindex="-1"
+          aria-disabled="true"
+        >
+          Précédente
+        </a>
+      </li>
+      {% endif %}
+  
+      <li class="page-item active" aria-current="page">
+        <a class="page-link" href="#!"> {{results.number}} </a>
+      </li>
+  
+      {% if results.paginator.num_pages != results.number %}
+      <li class="page-item">
+        <a class="page-link" href="#!"> sur </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#!"> {{results.paginator.num_pages}} </a>
+      </li>
+  
+      {% endif %} {% if results.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?results={{results.next_page_number}}"> Suivante </a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+  

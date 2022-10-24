@@ -92,13 +92,14 @@ $.ajax({
     }
 });
 
-var recherchePost = document.getElementById('recherche-post').value;
-var searchButton = document.getElementById('button-search')
+var recherchePost = document.getElementById('recherche-post');
+var searchButton = document.getElementById('button-search');
+var alerter = "Veuillez entrer un thème à rechercher !"
 
 searchButton.addEventListener('click',
 function(){
-    if(recherchePost===""){
-        alert("Vueillez entrer un thème à rechercher !")
+    if(recherchePost.value === ""){
+       alert(alerter) 
     }})
 
 

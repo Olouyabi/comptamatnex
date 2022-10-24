@@ -6,12 +6,10 @@
 {% block heroview %}
 <div class="col-lg-12 col-xl-12 col-xxl-12">
   <div class="my-5 text-center text-xl-start">
-    <h1 class="display-5 fw-bolder hero-title mb-3 text-center">
-      Bienvenue sur le blog du livre !
-    </h1>
-    
-    {% if category %}
-        <p class="post-cat text-center">Articles de la catégorie <span class="text-yel">&middot;{{category}}&middot;</span> </p>
+    {% if query %}
+        <h1 class="display-5 fw-bolder hero-title mb-3 text-center">
+            Blogs contenant "{{ query }} :"
+        </h1>
     {% endif %}
         
   </div>
@@ -20,96 +18,56 @@
 
 {% block content %}
 <div class="container my-5 py-5">
-    {% if query %}
-        <div class="row post">
-            <!-- Blog entries-->
-            <div class="col-lg-8">
-            <!-- Nested row for non-featured blog posts-->
-            <div class="row">
-                {% with posts.count as nb_post %}
-                    {% if nb_post == 0 %}
-                        <p class="text-center">Aucun post n'est disponible pour le moment !</p>
-                    {% else %} 
-                        {% for post in posts %}
-                        <div class="col-lg-6">
-                        <!-- Blog post-->
-                        <div class="card h-100 mb-4">
-                            <a href="{{post.get_absolute_url}}"
-                            ><img
-                                class="card-img-top"
-                                src="{% static 'assets/imgs-blog/blog-post-bg.png' %}"
-                                alt="image illustrant la publication"
-                                title="Lire plus →"
-                            /></a>
-                            <div class="card-body">
-                            <div class="small text-muted">Posté depuis {{post.date_publication|timesince}}</div>
-                            <h2 class="card-title post-title">{{post.titre}}</h2>
-                            <p class="card-text">
-                                <!-- {{ post.contenu | safe }} -->
-                                {{post.contenu | safe | truncatechars:150}}
-                            </p>
-                            <a class="btn btn-primary" href=" {{post.get_absolute_url}} ">
-                                Lire plus →
-                            </a>
-                            </div>
-                        </div>
-                        </div>
-                        {% endfor %} 
-                    {% endif %} 
-                {% endwith %}
-            </div>
-            <!-- Pagination-->
-            {% include 'layout/pagination.html' with page=posts %}
-            </div>
-            <!-- Side widgets-->
-            <div class="col-lg-4">
-            <!-- Search widget-->
-            <div class="card mb-4">
-                <div class="card-header">Rechercher</div>
+    <div class="row post">
+      <!-- Blog entries-->
+      <div class="col-lg-8">
+        <!-- Nested row for non-featured blog posts-->
+        <div class="row">
+          {% if query %}
+            {% for post in results %}
+            <div class="col-lg-6">
+            <!-- Blog post-->
+            <div class="card h-100 mb-4">
+                <a href="{{post.get_absolute_url}}">
+                    <img
+                    class="card-img-top"
+                    src="{% static 'assets/imgs-blog/blog-post-bg.png' %}"
+                    alt="image illustrant la publication"
+                    title="Lire plus →"/>
+                </a>
                 <div class="card-body">
-                <div class="input-group">
-                    <input
-                    class="form-control"
-                    type="text"
-                    placeholder="Entrer un thème..."
-                    aria-label="Enter search term..."
-                    aria-describedby="button-search"
-                    />
-                    <button class="btn btn-primary" id="button-search" type="button">
-                    On y va !
-                    </button>
-                </div>
-                </div>
-            </div>
-            <!-- Categories widget-->
-            <div class="card mb-4">
-                <div class="card-header">Catégories</div>
-                <div class="card-body">
-                <div class="row">
-                    
-                    {% for cat in categories %}
-                    <div class="col-sm-6">
-                        <ul class="list-unstyled mb-0">
-                        <li><a href=" {% url 'category_post_list' cat.slug %} "> {{cat.nom_categorie}} </a></li>
-                        </ul>
+                    <div class="small text-muted">Posté depuis {{post.date_publication|timesince}}</div>
+                        <h2 class="card-title post-title">{{post.titre}}</h2>
+                        <p class="card-text">
+                            <!-- {{ post.contenu | safe }} -->
+                            {{post.contenu | safe | truncatechars:150}}
+                        </p>
+                <a class="btn btn-primary" href=" {{post.get_absolute_url}} ">
+                    Lire plus →
+                    </a>
                     </div>
-                    {% endfor %}
-                        
-                </div>
-                </div>
-            </div>
-            <!-- Side widget-->
-            <div class="card mb-4">
-                <div class="card-header">Commander le livre</div>
-                <div class="card-body">
-                Devenez membre ComptaMat NEx en commandant au moins un exemplaire imprimé ou
-                    numérique du livre !
-                <a class="btn btn-primary mt-3" href="{% url 'store_view' %}">Lancez-vous !</a>
-                </div>
             </div>
             </div>
+            {% empty %}
+                <p class="text-center">Aucun post ne contient le thème "{{query}}" !</p>
+            {% endfor %} 
+            
+                    {% comment %} <h1>
+                        Recherche de blog
+                    </h1>
+                    <form method="get">
+                        {{ search_form.as_p}}
+                        <input type="submit" value="recherche">
+                    </form> {% endcomment %}
+          {% endif %}
         </div>
-    {% endif %}
+    </div>
 </div>
-
+<!-- Pagination-->
+{% include 'layout/pagination-recherche.html' with page=results %}
+<p class="text-center mt-5">
+    <a href="{% url 'post_list' %}">
+        Revenir sur l'accueil du blog →
+    </a>
+</p>
 {% endblock content %}

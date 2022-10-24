@@ -42,6 +42,14 @@
                     </p>
 
                 </section>
+
+                <!--Back to blog -->
+                <p class="text-center mt-5 mb-5">
+                  <a href="{% url 'post_list' %}">
+                      Revenir sur l'accueil du blog →
+                  </a>
+                </p>
+
             </article>
             <!-- Comments section-->
             <section class="mb-5">
@@ -107,53 +115,7 @@
             </section>
         </div>
          <!-- Side widgets-->
-    <div class="col-lg-4">
-        <!-- Search widget-->
-        {% comment %} <div class="card mb-4">
-          <div class="card-header">Rechercher</div>
-          <div class="card-body">
-            <div class="input-group">
-              <input
-                class="form-control"
-                type="text"
-                placeholder="Entrer un thème..."
-                aria-label="Enter search term..."
-                aria-describedby="button-search"
-              />
-              <button class="btn btn-primary" id="button-search" type="button">
-                On y va !
-              </button>
-            </div>
-          </div>
-        </div> {% endcomment %}
-        <!-- Categories widget-->
-        <div class="card mb-4">
-          <div class="card-header">Catégories</div>
-          <div class="card-body">
-            <div class="row">
-              
-              {% for cat in categories %}
-              <div class="col-sm-6">
-                  <ul class="list-unstyled mb-0">
-                    <li><a href=" {% url 'category_post_list' cat.slug%} "> {{cat.nom_categorie}} </a></li>
-                  </ul>
-                </div>
-              {% endfor %}
-                  
-            </div>
-          </div>
-        </div>
-        <!-- Side widget-->
-        <div class="card mb-4">
-          <div class="card-header">Commander le livre</div>
-          <div class="card-body">
-            Devenez membre ComptaMat NEx en commandant au moins un exemplaire imprimé ou
-            numérique du livre !
-            <a class="btn btn-primary mt-3" href="{% url 'store_view' %}">Lancez-vous !</a>
-          </div>
-        </div>
-      </div>
-    </div>
+        {% include 'layout/blog-side-widgets.html' %}
 </div>
 
 {% endblock content %}
