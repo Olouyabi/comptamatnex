@@ -3,14 +3,14 @@
 
 {% block title %}
 {% if subtitle %}
-{{ subtitle }} | {% endif %}{{ title }} | ComptaMat NEx - Admin
+{{ subtitle }} | {% endif %}{{ title }} | NEx ComptaMat - Admin
 {% endblock %}
 
 {% block branding %}
 <h1 id="site-name" style="font-family: cursive;">
     <a href="{% url 'admin:index' %}">
         <img src="{% static 'assets/logo-nex.png' %}" alt="" class="img-fluid" height="25px">
-        <span style="color:#f49523">ComptaMat NEx</span>
+        <span style="color:#f49523">NEx ComptaMat</span>
     </a>
 </h1>
 {% endblock %}

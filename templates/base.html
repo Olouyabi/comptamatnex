@@ -37,7 +37,7 @@
     <meta name="author" content="Norbert Kassa">
 
     <title>        
-        ComptaMat NEx | {% block subtitle %} Accueil {% endblock subtitle %}
+        NEx ComptaMat | {% block subtitle %} Accueil {% endblock subtitle %}
     </title>
 
     <script type="text/javascript">
@@ -88,9 +88,9 @@
         <nav class="navbar navbar-expand-lg ">
             <div class="container px-5">
                 <a class="navbar-brand ne-brand" href="{% url 'home_view' %}">
-                    <!-- ComptaMat NEx -->
-                    <img src="{% static 'assets/logo-nex.png' %}" title="Logo de ComptaMat NEx" alt="Logo de ComptaMat NEx" class="img-fluid">
-                    <!-- <span>ComptaMat NEx</span> -->
+                    <!-- NEx ComptaMat -->
+                    <img src="{% static 'assets/logo-nex.png' %}" title="Logo de NEx ComptaMat" alt="Logo de NEx ComptaMat" class="img-fluid">
+                    <!-- <span>NEx ComptaMat</span> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -106,7 +106,7 @@
                         <li class="nav-item"><a class="nav-link {% if navbar == 'store' %} active {% endif %}" href="{% url 'store_view' %}">Commander</a></li>
                         <li class="nav-item"><a class="nav-link {% if navbar == 'blog' %} active {% endif %}" href="{% url 'post_list' %}">Blog</a></li>
                         <li class="nav-item"><a class="nav-link {% if navbar == 'contact' %} active {% endif %}" href="{% url 'contact_view' %}">Contact</a></li>
-                        <li class="nav-item membre-cmenex"><a class="nav-link {% if navbar == 'membre' %} active {% endif %}" href="{% url 'login_view' %}">Membre ComptaMat NEx</a></li>
+                        <li class="nav-item membre-cmenex"><a class="nav-link {% if navbar == 'membre' %} active {% endif %}" href="{% url 'login_view' %}">Membre NEx ComptaMat</a></li>
                         {% endblock navbaritem %}  
                     </ul>
                 </div>
@@ -160,7 +160,7 @@
                 {% block footerlink %}
 
                 <div class="col-auto">
-                    <div class="small m-0 text-white">Copyright &copy; ComptaMat NEx {% now 'Y' %} </div>
+                    <div class="small m-0 text-white">Copyright &copy; NEx ComptaMat {% now 'Y' %} </div>
                 </div>
                 <div class="col-auto">
                     <a class="link-light small" href="{% url 'home_view' %}#apropos"><span

@@ -199,13 +199,13 @@ SILENCED_SYSTEM_CHECKS = ["security.W019"]
 
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
-    "site_title": "ComptaMat NEx",
+    "site_title": "NEx ComptaMat",
 
     # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "ComptaMat NEx",
+    "site_header": "NEx ComptaMat",
 
     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_brand": "ComptaMat NEx",
+    "site_brand": "NEx ComptaMat",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
     "site_logo": "assets/logo-nex.ico",
@@ -223,7 +223,7 @@ JAZZMIN_SETTINGS = {
     "site_icon": "assets/logo-nex.ico",
 
     # Welcome text on the login screen
-    "welcome_sign": "Bienvenue | ComptaMat NEx",
+    "welcome_sign": "Bienvenue | NEx ComptaMat",
     
 
 }
