@@ -5,6 +5,7 @@
       <div class="card-header">Rechercher</div>
       <div class="card-body">
         <form action="{% url 'recherche_post' %}" method="get">
+          {% csrf_token %}
           <div class="input-group">
             <input
               class="form-control"

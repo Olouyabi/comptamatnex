@@ -6,7 +6,11 @@
 {% block navbaritem %}
     <li class="nav-item"><a class="nav-link {% if navbar == 'hero' %} active {% endif %}" href="{% url 'home_view' %}">Accueil</a></li>
     <li class="nav-item"><a class="nav-link {% if navbar == 'contact' %} active {% endif %}" href="{% url 'contact_view' %}">Contact</a></li>
-    <li class="nav-item"><a class="nav-link {% if navbar == 'membre' %} active {% endif %}" href=" {% url 'logout_view' %} ">Se déconnecter</a></li>
+    {% comment %} <li class="nav-item"><a class="nav-link {% if navbar == 'membre' %} active {% endif %}" href=" {% url 'logout_view' %} ">Se déconnecter</a></li> {% endcomment %}
+    <li class="nav-item"><a class="nav-link {% if navbar == 'membre' %} active {% endif %}" href="" data-bs-toggle="modal" data-bs-target="#profile">
+      <img class="member-avatar" src="{{member.avatar.url}}" alt="avatar de {{member}}" title="avatar de {{member}}" />
+      {{member}}
+    </a></li>
 {% endblock navbaritem %}  
 
 {% block heroview %}
@@ -16,12 +20,12 @@
         <h1 class="display-5 fw-bolder hero-title mb-2 text-center">
             Bienvenue, Membre NEx ComptaMat !
         </h1>
-        <h1 class="text-center mt-5">
+        {% comment %} <h1 class="text-center mt-5">
           <img class="member-avatar" src="{{member.avatar.url}}" />
         </h1>
         <p class="text-center">
           {{member}}
-        </p>
+        </p> {% endcomment %}
     </div>
 </div>
 
@@ -88,7 +92,7 @@
           </div>
         </div>
         <!-- Categories widget-->
-        <div class="card mb-4">
+        {% comment %} <div class="card mb-4">
           <div class="card-header">Catégories</div>
           <div class="card-body">
             <div class="row">
@@ -103,9 +107,9 @@
                   
             </div>
           </div>
-        </div>
+        </div> {% endcomment %}
         <!-- Side widget-->
-        <div class="card mb-4">
+      {% comment %} <div class="card mb-4">
           <div class="card-header">Mon profile</div>
           <div class="card-body">
             <table class="member-profile">
@@ -167,9 +171,10 @@
             </ul>
           </div>
         </div>
-      </div>
+      </div> {% endcomment %}
     </div>
   </div>
+  {% include 'profile.html' %}
   
 {% endblock content %}
 

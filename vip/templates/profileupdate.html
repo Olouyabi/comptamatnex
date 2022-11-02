@@ -1,0 +1,23 @@
+{% extends 'modalbase/modalbase.html' %}
+
+{% comment %} modal id {% endcomment %}
+{% block modalid %}
+    id="profileup"
+{% endblock modalid %}
+
+{% comment %} modal title {% endcomment %}
+{% block modaltitle %}
+   Modifier votre profile
+{% endblock modaltitle %}
+
+{% comment %} modal body {% endcomment %}
+{% block modalbody %}
+
+
+
+{% endblock modalbody %}
+{% block modalbtn %}
+    <button type="button" class="btn">
+        <a class="btn btn-danger" href=" {% url 'logout_view' %} ">Modifier</a>
+    </button>
+{% endblock modalbtn %}

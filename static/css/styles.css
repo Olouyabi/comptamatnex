@@ -10833,6 +10833,9 @@ a:hover {
 .navbar .ne-brand img {
   width: 50px;
 }
+.navbar .nav-item {
+  line-height: 39px;
+}
 .navbar .nav-link {
   color: #fff;
   transition: all 0.3s ease 0s;
@@ -10840,18 +10843,14 @@ a:hover {
 .navbar .nav-link:hover {
   color: #f49523;
 }
-.navbar .membre-cmenex {
-  background-color: #f49523;
-  height: 100%;
-}
 .navbar .membre-cmenex .nav-link {
   display: block;
   height: 100%;
-  color: #034077 !important;
+  color: #21b403 !important;
   transition: all 0.3s ease 0s;
 }
 .navbar .membre-cmenex .nav-link:hover {
-  background-color: #fff;
+  color: #f49523 !important;
 }
 
 .navbar-toggler {
@@ -10895,6 +10894,12 @@ blockquote {
   position: relative;
   background-color: #e9ecef;
 }
+@media (max-width: 991px) {
+  blockquote {
+    font-size: 1rem;
+    padding: 1.2em 10px 1.2em 30px;
+  }
+}
 blockquote:before {
   font-family: Arial;
   content: "“";
@@ -10903,6 +10908,13 @@ blockquote:before {
   position: absolute;
   left: 10px;
   top: -10px;
+}
+@media (max-width: 991px) {
+  blockquote:before {
+    font-size: 3em;
+    left: 5px;
+    top: -5px;
+  }
 }
 
 .about-ne-cme {
@@ -11022,7 +11034,7 @@ blockquote:before {
 }
 @media (max-width: 991px) {
   .form-bg {
-    top: -3rem;
+    top: -4rem !important;
   }
 }
 .form-bg.form-store {
@@ -11087,6 +11099,20 @@ textarea {
 }
 
 /*************sign up & paw forgtten*******/
+.not_login {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 991px) {
+  .not_login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .not_login a {
   font-size: 0.8em;
   margin: 0 2rem;
@@ -11150,6 +11176,16 @@ textarea {
   background-color: rgba(0, 0, 0, 0.082);
 }
 
+@media (max-width: 991px) {
+  .fluided .col-lg-6, .fluided .col-lg-10, .fluided .col-xl-7 {
+    width: 100% !important;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+}
+
 .box-element {
   box-shadow: hsl(0deg, 0%, 80%) 0 0 16px;
   background-color: #fff;
@@ -11211,6 +11247,7 @@ textarea {
   border-radius: 50%;
   font-size: 14px;
   left: -10px;
+  line-height: 26px;
 }
 
 .row-image {
@@ -11691,6 +11728,12 @@ textarea {
 
 .member-friend {
   list-style-type: none;
+}
+
+.member-avatar {
+  max-width: 45px;
+  max-height: 45px;
+  border-radius: 50%;
 }
 
 @media (max-width: 1024px) {

@@ -31,7 +31,7 @@ class MembreUser(models.Model):
         return self.friends.all().count()
 
     def __str__(self) -> str:
-        return f"{self.user.username}-{self.created.strftime('%d-%m-%Y')}"
+        return f"{self.user.username}"
 
     def save(self, *args, **kwargs):
         ex = False

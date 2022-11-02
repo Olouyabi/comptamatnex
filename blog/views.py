@@ -74,20 +74,20 @@ def recherche_post(request):
             results = Post.published.annotate(search=SearchVector('titre', 'contenu'),
             ).filter(search=query)
 
-    paginator = Paginator(results, 2)
-    page = request.GET.get('page')
-    try:
-        results = paginator.page(page)
-    except PageNotAnInteger:
-        results = paginator.page(1)
-    except EmptyPage:
-        results = paginator.page(paginator.num_pages)
+    # paginator = Paginator(results, 2)
+    # page = request.GET.get('page')
+    # try:
+    #     results = paginator.page(page)
+    # except PageNotAnInteger:
+    #     results = paginator.page(1)
+    # except EmptyPage:
+    #     results = paginator.page(paginator.num_pages)
 
     context = {
         'search_form': search_form,
         'query': query,
         'results': results,
-        'page' : page,
+        # 'page' : page,
         'navbar':'blog',
     }
 

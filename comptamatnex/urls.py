@@ -24,7 +24,6 @@ from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 from django.views.generic.base import RedirectView
 
 
-
 urlpatterns = [
     path('', views.home, name="home_view"),
     # path('contact/', views.contact, name="contact_view"),
@@ -35,7 +34,7 @@ urlpatterns = [
     path('', include('commande.urls')),
     path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
     path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
-    path('admin/', admin.site.urls),
+    path('nex/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
     path(
         "favicon.ico",

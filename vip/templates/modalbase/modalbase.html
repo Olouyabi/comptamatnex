@@ -1,0 +1,28 @@
+<!-- Button trigger modal -->
+{% comment %} <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button> {% endcomment %}
+  
+  <!-- Modal ROOT-->
+  <div class="modal fade" {% block modalid %}{% endblock modalid %} tabindex="-1" aria-labelledby="defaultModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="defaultModalLabel">
+            {% block modaltitle %}{% endblock modaltitle %}
+          </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          {% block modalbody %}{% endblock modalbody %}
+        </div>
+        <div class="modal-footer">
+          {% comment %} <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button> {% endcomment %}
+          <a class="btn btn-ne" href="#" data-bs-dismiss="modal">Fermer</a>
+          {% block modalbtn %}
+          {% comment %} <button type="button" class="btn btn-primary">Se déconnecter</button> {% endcomment %}
+          {% endblock modalbtn %}
+        </div>
+      </div>
+    </div>
+  </div>

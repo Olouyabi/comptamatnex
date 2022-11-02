@@ -1,0 +1,84 @@
+{% extends 'modalbase/modalbase.html' %}
+
+{% comment %} modal id {% endcomment %}
+{% block modalid %}
+    id="profile"
+{% endblock modalid %}
+
+{% comment %} modal title {% endcomment %}
+{% block modaltitle %}
+    {% comment %} <a class="btn btn-danger" href="#" data-bs-toggle="modal" data-bs-target="#profileup" title="Modifier votre profile">Votre profile</a> {% endcomment %}
+    <a class="btn btn-danger" href="#" data-bs-toggle="modal" data-bs-target="#profileup" title="Modifier votre profile">
+      <img class="member-avatar" src="{{member.avatar.url}}" alt="avatar de {{member}}" title="avatar de {{member}}" />
+      {{member}}
+    </a>
+{% endblock modaltitle %}
+
+{% comment %} modal body {% endcomment %}
+{% block modalbody %}
+<table class="member-profile">
+    <tr>
+      <th>
+        Pseudo
+      </th>
+      <td>
+        {{member.user}}
+      </td>
+    </tr>
+    <tr>
+      <th>
+        Utilisateur
+      </th>
+      <td>
+        {{member.first_name}} {{member.last_name}}
+      </td>
+    </tr>
+    <tr>
+      <th>
+        Mail
+      </th>
+      <td>
+        {{member.email}}
+      </td>
+    </tr>
+    <tr>
+      <th>
+        Code
+      </th>
+      <td>
+        {{member.slug}}
+      </td>
+    </tr>
+    <tr>
+      <th>
+        Bio
+      </th>
+      <td>
+        {{member.bio}}
+      </td>
+    </tr>
+    <tr>
+      <th>
+        Ami ({{member.get_friends_nb}})
+      </th>
+      <td>
+        
+      </td>
+    </tr>
+</table>
+<ul class="member-friend">
+{% for friend in member.get_friends %}
+    <li>
+    {{friend}}
+    <li>
+{% endfor %}
+</ul>
+
+{% endblock modalbody %}
+{% block modalbtn %}
+    <button type="button" class="btn">
+        <a class="btn btn-danger" href=" {% url 'logout_view' %} ">Se déconnecter</a>
+    </button>
+{% endblock modalbtn %}
+
+{% include 'profileupdate.html' %}

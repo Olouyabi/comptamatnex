@@ -37,7 +37,9 @@
                 </a>
                 <div class="card-body">
                     <div class="small text-muted">Posté depuis {{post.date_publication|timesince}}</div>
-                        <h2 class="card-title post-title">{{post.titre}}</h2>
+                        <h2 class="card-title post-title">
+                            {{post.titre}}
+                        </h2>
                         <p class="card-text">
                             <!-- {{ post.contenu | safe }} -->
                             {{post.contenu | safe | truncatechars:150}}
@@ -51,7 +53,6 @@
             {% empty %}
                 <p class="text-center">Aucun post ne contient le thème "{{query}}" !</p>
             {% endfor %} 
-            
                     {% comment %} <h1>
                         Recherche de blog
                     </h1>
@@ -64,7 +65,7 @@
     </div>
 </div>
 <!-- Pagination-->
-{% include 'layout/pagination-recherche.html' with page=results %}
+{% comment %} {% include 'layout/pagination-recherche.html' with page=results %} {% endcomment %}
 <p class="text-center mt-5">
     <a href="{% url 'post_list' %}">
         Revenir sur l'accueil du blog →
